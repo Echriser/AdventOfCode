@@ -38,4 +38,19 @@ pub fn main() !void {
     }
 
     std.debug.print("Part 1: {}\n", .{sum});
+
+    // Part 2
+    // Number of occurances
+    var occurancesum: u32 = 0;
+    for (inputs1.items) |i| {
+        var thisoccurance: u32 = 0;
+        for (inputs2.items) |j| {
+            if (i == j) {
+                thisoccurance += 1;
+            }
+        }
+        occurancesum += i * thisoccurance;
+    }
+
+    std.debug.print("Part 2: {}\n", .{occurancesum});
 }
